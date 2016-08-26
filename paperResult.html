@@ -46,20 +46,28 @@
                 answerAreaH = $(answerBox).height(),
                 margins = parseInt(wrapperH * 0.1);
 
-        var sw1 = new Swiper('.swiper-container-h')
-        new Swiper('.answerInfo', {nested: true})
+        ciwong.swiperInstall = new Swiper('.swiper-container-h', {
+            onInit: function () {
+                new Swiper('.answerInfo', {nested: true})
+            }
+        })
+
+        var agentInfo = window.navigator.userAgent;
+        if (agentInfo.indexOf("iPhone") > -1 || agentInfo.indexOf("iPad") > -1 || agentInfo.indexOf("iPod") > -1) {
+            $(".answerCon").height(wrapperH);
+        }
 
         $(questBox).height(wrapperH - answerAreaH);
         $(".weui_toast,.weui_masktransparent").remove()
+
         $('.toggleBox .btn').on('touchstart', function (e) {
             var box = $(this).closest('.wrapper');
             var _touch = e.originalEvent.targetTouches[0];
             currPageY = _touch.pageY;
             boxH = box.find(answerBox).height();
-            sw1 && sw1.lockSwipes();
+            ciwong.swiperInstall.lockSwipes();
             e.preventDefault();
-        });
-        $('.toggleBox .btn').on('touchmove', function (e) {
+        }).on('touchmove', function (e) {
             var box = $(this).closest('.wrapper');
             var _touch = e.originalEvent.targetTouches[0];
             var currY = _touch.pageY;
@@ -80,695 +88,2006 @@
                 box.find(questBox).height(wrapperH - boxH + moveLen);
             }
             e.preventDefault();
-        });
-        $('.toggleBox .btn').on('touchend', sw1.unlockSwipes);
+        }).on('touchend', ciwong.swiperInstall.unlockSwipes);
     }
 
     callback({
-        "title": "八年级上学期Unit 1同步测试（深圳专版）",
-        "ref_score": 85.0,
-        "curriculum_id": -1,
-        "parts": [
-            {
-                "sid": 0,
-                "module_type_name": "词语释义。 从下面每小题的A B C D四个选项中选出可以替换划线部分的最佳选项。（共5小题，每小题1分）（5分）",
-                "module_type_url": "",
-                "children": [
-                    {
-                        "sid": 0,
-                        "stem": "There are <u>more than</u> 60 lifts in Kingkey 100.  ",
-                        "qtype": 1,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "950460955556352919"
-                            ],
-                            "solving_idea": "我是解题思路,我是解题思路哦",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352917",
-                                "stem": "a lot of",
-                                "attachments": [{
-                                    "file_type": 2,
-                                    "position": 2,
-                                    "file_url": "images/music.mp3"
-                                }]
-                            },
-                            {
-                                "id": "950460955556352918",
-                                "stem": "a few",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352919",
-                                "stem": "over",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352920",
-                                "stem": "under",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [{
-                            "file_type": 3,
-                            "position": 2,
-                            "file_url": "letv://a3df"
-                        }],
-                        "children": [],
-                        "id": "855789107374322738",
-                        "version_id": "950460940484674737"
-                    },
-                    {
-                        "sid": 1,
-                        "stem": "<u>Perhaps</u> I should do more practice.   ",
-                        "qtype": 2,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "950460955556352924"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352921",
-                                "stem": "Certainly",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352922",
-                                "stem": "Yet",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352923",
-                                "stem": "Because",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352924",
-                                "stem": "Maybe",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [],
-                        "children": [],
-                        "id": "855789107374322739",
-                        "version_id": "950460940484674738"
-                    },
-                    {
-                        "sid": 2,
-                        "stem": "Thomas <u>has the ability</u> to sing like a girl.  ",
-                        "qtype": 8,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "950460955556352925"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352925",
-                                "stem": "can",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352926",
-                                "stem": "likes",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352927",
-                                "stem": "must",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352928",
-                                "stem": "will",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [],
-                        "children": [],
-                        "id": "855789107374322740",
-                        "version_id": "950460940484674739"
-                    },
-                    {
-                        "sid": 3,
-                        "stem": "形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，完毕Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
-                        "qtype": 3,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "空1",
-                                "空2"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352929",
-                                "stem": "in a village",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352930",
-                                "stem": "from the city",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352931",
-                                "stem": "by car",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352932",
-                                "stem": "in Australia",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [],
-                        "children": [],
-                        "id": "855789107374322741",
-                        "version_id": "950460940484674740"
-                    },
-                    {
-                        "sid": 4,
-                        "stem": "Dinosaurs <u>died out</u> for some unknown reasons.  ",
-                        "qtype": 6,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "我是简答题参考答案"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352933",
-                                "stem": "went away",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352934",
-                                "stem": "were killed",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352935",
-                                "stem": "no longer live on earth",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352936",
-                                "stem": "were not at home",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [],
-                        "children": [],
-                        "id": "855789107374322742",
-                        "version_id": "950460940484674741"
-                    },
-                    {
-                        "sid": 0,
-                        "stem": "50、完形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，解题思路（图片、文字）{#blank#}3{#/blank#}&nbsp;<br />\n&nbsp;Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
-                        "curriculum_id": 0,
-                        "qtype": 4,
-                        "is_objective": 1,
-                        "parent_version": "0",
-                        "question_ref_sorce": 30,
-                        "ref_info": {
-                            "answers": [
-                                "950460955556352935"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [],
-                        "attachments": [
-                            {
-                                "file_type": 1,
-                                "position": 2,
-                                "file_url": "images/music.png"
-                            }
-                        ],
-                        "children": [
-                            {
-                                "sid": 0,
-                                "stem": "",
-                                "curriculum_id": 0,
-                                "qtype": 1,
-                                "is_objective": 1,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 10,
-                                "ref_info": {
-                                    "answers": [
-                                        "950460955558783942"
-                                    ],
-                                    "solving_idea": "解题思路（图片、文字1）",
-                                    "attachments": [
-                                        {
-                                            "file_type": 1,
-                                            "position": 2,
-                                            "file_url": "images/music.png"
-                                        }
-                                    ],
-                                    "points": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955558783942",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "images/music.png"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "950460955558783943",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "images/music.png"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "950460955558783944",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "images/music.png"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107375196017",
-                                "version_id": "950460940485547540"
-                            },
-                            {
-                                "sid": 1,
-                                "stem": "",
-                                "curriculum_id": 0,
-                                "qtype": 1,
-                                "is_objective": 1,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 10,
-                                "ref_info": {
-                                    "answers": [
-                                        "950460955558783945"
-                                    ],
-                                    "solving_idea": "解题思路（图片、文字2<br />\n&nbsp;",
-                                    "attachments": [
-                                        {
-                                            "file_type": 1,
-                                            "position": 2,
-                                            "file_url": "packages/catalogue_4776_1044757/media/c99431c24a3e8e8b7f6d9e117d3d0823.png"
-                                        }
-                                    ],
-                                    "points": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955558783945",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "packages/catalogue_4776_1044757/media/941b9ae193379d83b5f26cac80748168.png"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "950460955558783946",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "packages/catalogue_4776_1044757/media/6f10b327f75e4ce31f3c631ae56cc9df.png"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "950460955558783947",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "packages/catalogue_4776_1044757/media/f6f68f67bda56f820b86501fdac71e27.png"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "id": "950460955558783948",
-                                        "stem": "",
-                                        "attachments": [
-                                            {
-                                                "file_type": 1,
-                                                "position": 2,
-                                                "file_url": "packages/catalogue_4776_1044757/media/15626d2f7c18b3537e05232dde5a3e26.png"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107375196018",
-                                "version_id": "950460940485547541"
-                            }
-                        ],
-                        "id": "855789107375196016",
-                        "version_id": "950460940485547539"
-                    },
-                    {
-                        "sid": 0,
-                        "stem": "50、完形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，解题思路（图片、文字）{#blank#}3{#/blank#}&nbsp;<br />\n&nbsp;Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
-                        "curriculum_id": 0,
-                        "qtype": 5,
-                        "is_objective": 1,
-                        "parent_version": "0",
-                        "question_ref_sorce": 30,
-                        "ref_info": {
-                            "answers": [
-                                "950460955556352935"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [],
-                        "attachments": [
-                            {
-                                "file_type": 1,
-                                "position": 2,
-                                "file_url": "packages/catalogue_4776_1044757/media/d89c4441464a339ac658bb2be76a31bb.png"
-                            }
-                        ],
-                        "children": [
-                            {
-                                "sid": 0,
-                                "stem": "There are <u>more than</u> 60 lifts in Kingkey 100.  ",
-                                "qtype": 1,
-                                "is_objective": true,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 1,
-                                "ref_info": {
-                                    "answers": [
-                                        "950460955556352919"
-                                    ],
-                                    "solving_idea": "",
-                                    "attachments": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955556352917",
-                                        "stem": "a lot of",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352918",
-                                        "stem": "a few",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352919",
-                                        "stem": "over",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352920",
-                                        "stem": "under",
-                                        "attachments": []
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107374322738",
-                                "version_id": "950460940484674737"
-                            },
-                            {
-                                "sid": 1,
-                                "stem": "<u>Perhaps</u> I should do more practice.   ",
-                                "qtype": 2,
-                                "is_objective": true,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 1,
-                                "ref_info": {
-                                    "answers": [
-                                        "950460955556352924"
-                                    ],
-                                    "solving_idea": "",
-                                    "attachments": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955556352921",
-                                        "stem": "Certainly",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352922",
-                                        "stem": "Yet",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352923",
-                                        "stem": "Because",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352924",
-                                        "stem": "Maybe",
-                                        "attachments": []
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107374322739",
-                                "version_id": "950460940484674738"
-                            },
-                            {
-                                "sid": 2,
-                                "stem": "Thomas <u>has the ability</u> to sing like a girl.  ",
-                                "qtype": 8,
-                                "is_objective": true,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 1,
-                                "ref_info": {
-                                    "answers": [
-                                        "950460955556352925"
-                                    ],
-                                    "solving_idea": "",
-                                    "attachments": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955556352925",
-                                        "stem": "can",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352926",
-                                        "stem": "likes",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352927",
-                                        "stem": "must",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352928",
-                                        "stem": "will",
-                                        "attachments": []
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107374322740",
-                                "version_id": "950460940484674739"
-                            },
-                            {
-                                "sid": 3,
-                                "stem": "回答下面简答题",
-                                "qtype": 6,
-                                "is_objective": true,
-                                "parent_version": "950460940485547539",
-                                "question_ref_sorce": 1,
-                                "ref_info": {
-                                    "answers": [
-                                        "空1"
-                                    ],
-                                    "solving_idea": "",
-                                    "attachments": []
-                                },
-                                "options": [
-                                    {
-                                        "id": "950460955556352929",
-                                        "stem": "in a village",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352930",
-                                        "stem": "from the city",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352931",
-                                        "stem": "by car",
-                                        "attachments": []
-                                    },
-                                    {
-                                        "id": "950460955556352932",
-                                        "stem": "in Australia",
-                                        "attachments": []
-                                    }
-                                ],
-                                "attachments": [],
-                                "children": [],
-                                "id": "855789107374322741",
-                                "version_id": "95046940484674740"
-                            },
-                        ],
-                        "id": "855789107375196016",
-                        "version_id": "950460940485547539"
-                    },
-                    {
-                        "sid": 3,
-                        "stem": "形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，完毕Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
-                        "qtype": 3,
-                        "is_objective": true,
-                        "parent_version": "0",
-                        "question_ref_sorce": 1.0,
-                        "ref_info": {
-                            "answers": [
-                                "空1",
-                                "空2"
-                            ],
-                            "solving_idea": "",
-                            "attachments": []
-                        },
-                        "options": [
-                            {
-                                "id": "950460955556352929",
-                                "stem": "in a village",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352930",
-                                "stem": "from the city",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352931",
-                                "stem": "by car",
-                                "attachments": []
-                            },
-                            {
-                                "id": "950460955556352932",
-                                "stem": "in Australia",
-                                "attachments": []
-                            }
-                        ],
-                        "attachments": [],
-                        "children": [],
-                        "id": "855789107374322741",
-                        "version_id": "95060940484674740"
-                    }
-                ]
-            }
-        ]
-    }, [
-        {
-            "answers": [
-                {
-                    "answerType": 0,
-                    "assess": 0,
-                    "content": "950460955556352917",
-                    "score": 0
-                }
-            ],
-            "assess": 1,
-            "score": 10,
-            "versionId": "950460940484674737"
-        }, {
-            "answers": [
+        "title": "数字周报九年级上第一章",
+        "ref_score": 100.0,
+        "curriculum_id": 3,
+        "parts": [{
+            "sid": 0,
+            "module_type_name": "单项选择。从各题后所给的A、 B、 C、 D四个选项中选出最佳答案。（每小题1分，共15分）",
+            "module_type_url": "",
+            "children": [
                 {
                     "sid": 0,
-                    "answerType": 0,
-                    "assess": 0,
-                    "content": "950460955556352921",
-                    "score": 0
-                }
-            ],
-            "assess": 2,
-            "score": 0,
-            "versionId": "950460940484674738"
-        }, {
-            "answers": [
-                {
-                    "sid": 0,
-                    "answerType": 0,
-                    "assess": 1,
-                    "content": "kong-1",
-                    "score": 1
-                },
-                {
+                    "stem": "My father wants me to be a doctor ______ an engineer, ______ I want to be an actor.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.5,
+                    "ref_info": {
+                        "answers": ["950460955558800126"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800123",
+                        "stem": "or; and",
+                        "attachments": []
+                    }, {"id": "950460955558800124", "stem": "and; but", "attachments": []}, {
+                        "id": "950460955558800125",
+                        "stem": "and; so",
+                        "attachments": []
+                    }, {"id": "950460955558800126", "stem": "or; but", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203284",
+                    "version_id": "950460940485554807"
+                }, {
                     "sid": 1,
-                    "answerType": 0,
-                    "assess": 2,
-                    "content": "kong-2",
-                    "score": 0
-                }
-            ],
-            "assess": 1,
-            "score": 0,
-            "versionId": "95060940484674740"
+                    "stem": "Yesterday some students were absent ______ school because of the terrible weather.  ",
+                    "curriculum_id": 0,
+                    "qtype": 2,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800128"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800127", "stem": "for", "attachments": []}, {
+                        "id": "950460955558800128",
+                        "stem": "from",
+                        "attachments": []
+                    }, {"id": "950460955558800129", "stem": "with", "attachments": []}, {
+                        "id": "950460955558800130",
+                        "stem": "of",
+                        "attachments": []
+                    }],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203285",
+                    "version_id": "950460940485554808"
+                }, {
+                    "sid": 2,
+                    "stem": "—What’s your son like?  <div>—He is ______ and always asks me all kinds of strange questions.</div>  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800134"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800131",
+                        "stem": "energetic",
+                        "attachments": []
+                    }, {"id": "950460955558800132", "stem": "organized", "attachments": []}, {
+                        "id": "950460955558800133",
+                        "stem": "creative",
+                        "attachments": []
+                    }, {"id": "950460955558800134", "stem": "curious", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203286",
+                    "version_id": "950460940485554809"
+                }, {
+                    "sid": 3,
+                    "stem": "Bill always has all kinds of ideas. He is ______ to be a writer.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800136"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800135",
+                        "stem": "enough creative",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800136",
+                        "stem": "creative enough",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800137",
+                        "stem": "energetic enough",
+                        "attachments": []
+                    }, {"id": "950460955558800138", "stem": "enough energetic", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203287",
+                    "version_id": "950460940485554810"
+                }, {
+                    "sid": 4,
+                    "stem": "The movie Paddington won high ______ from young people. It is really wonderful.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800139"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800139",
+                        "stem": "praise",
+                        "attachments": []
+                    }, {"id": "950460955558800140", "stem": "right", "attachments": []}, {
+                        "id": "950460955558800141",
+                        "stem": "effect",
+                        "attachments": []
+                    }, {"id": "950460955558800142", "stem": "prize", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203288",
+                    "version_id": "950460940485554811"
+                }, {
+                    "sid": 5,
+                    "stem": "Yesterday our English teacher told us how great books ______ her life.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800145"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800143",
+                        "stem": "connected",
+                        "attachments": []
+                    }, {"id": "950460955558800144", "stem": "respected", "attachments": []}, {
+                        "id": "950460955558800145",
+                        "stem": "shaped",
+                        "attachments": []
+                    }, {"id": "950460955558800146", "stem": "supported", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203289",
+                    "version_id": "950460940485554812"
+                }, {
+                    "sid": 6,
+                    "stem": "In our school, there are four hundred students ______, three hundred boys and one hundred girls.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800148"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800147",
+                        "stem": "above all",
+                        "attachments": []
+                    }, {"id": "950460955558800148", "stem": "in all", "attachments": []}, {
+                        "id": "950460955558800149",
+                        "stem": "at all",
+                        "attachments": []
+                    }, {"id": "950460955558800150", "stem": "of all", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203290",
+                    "version_id": "950460940485554813"
+                }, {
+                    "sid": 7,
+                    "stem": "We ______ be too careful while driving on the expressway.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800153"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800151",
+                        "stem": "shouldn’t",
+                        "attachments": []
+                    }, {"id": "950460955558800152", "stem": "mustn’t", "attachments": []}, {
+                        "id": "950460955558800153",
+                        "stem": "can’t",
+                        "attachments": []
+                    }, {"id": "950460955558800154", "stem": "needn’t", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203291",
+                    "version_id": "950460940485554814"
+                }, {
+                    "sid": 8,
+                    "stem": "Neither Helen nor I ______ to Shennongjia. Could you tell us something about it?  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800155"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800155",
+                        "stem": "have been",
+                        "attachments": []
+                    }, {"id": "950460955558800156", "stem": "has been", "attachments": []}, {
+                        "id": "950460955558800157",
+                        "stem": "have gone",
+                        "attachments": []
+                    }, {"id": "950460955558800158", "stem": "has gone", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203292",
+                    "version_id": "950460940485554815"
+                }, {
+                    "sid": 9,
+                    "stem": "The young woman is always trying to ______ people with her new clothes so that she can get more attention.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800160"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800159",
+                        "stem": "share",
+                        "attachments": []
+                    }, {"id": "950460955558800160", "stem": "impress", "attachments": []}, {
+                        "id": "950460955558800161",
+                        "stem": "touch",
+                        "attachments": []
+                    }, {"id": "950460955558800162", "stem": "interest", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203293",
+                    "version_id": "950460940485554816"
+                }, {
+                    "sid": 10,
+                    "stem": "—Does your brother like the sweaters?   <div>—Yes, he does. ______ this sweater ______ that one fit him.</div>  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800165"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800163",
+                        "stem": "Either; or",
+                        "attachments": []
+                    }, {"id": "950460955558800164", "stem": "Neither; nor", "attachments": []}, {
+                        "id": "950460955558800165",
+                        "stem": "Both; and",
+                        "attachments": []
+                    }, {"id": "950460955558800166", "stem": "Not only; but also", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203294",
+                    "version_id": "950460940485554817"
+                }, {
+                    "sid": 11,
+                    "stem": "—Everybody should join in the Clean Your Plate Campaign.  <div>—Yes. We should try to ______ all the food that we’ve ordered.</div>  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800168"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800167",
+                        "stem": "pick up",
+                        "attachments": []
+                    }, {"id": "950460955558800168", "stem": "eat up", "attachments": []}, {
+                        "id": "950460955558800169",
+                        "stem": "show up",
+                        "attachments": []
+                    }, {"id": "950460955558800170", "stem": "turn up", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203295",
+                    "version_id": "950460940485554818"
+                }, {
+                    "sid": 12,
+                    "stem": "If you don’t study hard, you will ______ in your class.  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800172"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800171",
+                        "stem": "take the lead",
+                        "attachments": []
+                    }, {"id": "950460955558800172", "stem": "fall behind", "attachments": []}, {
+                        "id": "950460955558800173",
+                        "stem": "fall asleep",
+                        "attachments": []
+                    }, {"id": "950460955558800174", "stem": "take the place", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203296",
+                    "version_id": "950460940485554819"
+                }, {
+                    "sid": 13,
+                    "stem": "—Li Lei didn’t pass the exam just by one point, but ______.  <div>—What a pity!</div>  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800177"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800175",
+                        "stem": "actions speak louder than words",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800176",
+                        "stem": "the early bird catches the worm",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800177",
+                        "stem": "a miss is as good as a mile",
+                        "attachments": []
+                    }, {"id": "950460955558800178", "stem": "a friend in need is a friend indeed", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203297",
+                    "version_id": "950460940485554820"
+                }, {
+                    "sid": 14,
+                    "stem": "—Waste water from the factory mustn’t be poured into rivers.  <div>—______. It will cause water pollution.</div>  ",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "0",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800181"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800179",
+                        "stem": "Don’t say like this",
+                        "attachments": []
+                    }, {"id": "950460955558800180", "stem": "Never mind", "attachments": []}, {
+                        "id": "950460955558800181",
+                        "stem": "I agree with you",
+                        "attachments": []
+                    }, {"id": "950460955558800182", "stem": "The same to you", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203298",
+                    "version_id": "950460940485554821"
+                }]
         }, {
-            "answers": [
+            "sid": 1,
+            "module_type_name": "根据材料内容，从各题后所给的A、B、C、D四个选项中选出最佳答案。完形填空（每小题1分，共10分）",
+            "module_type_url": "",
+            "children": [{
+                "sid": 0,
+                "stem": "<div>易读度★★☆</div>\n\n<div>I have a brother and a sister named Tex and\nIndi. One day, Tex and his friend Sammy were building a space station using\nbricks (积木). I was sitting nearby, so I could hear their <u>  1  </u>. </div>\n\n<div>“I’m putting a jetpack (喷气背包) on this guy,” said\nSammy, “<u>  2  </u> he\ncan fly from the space station to the spaceship.”</div>\n\n<div>“You know, my grandfather invented (发明) the jetpack,” said\nTex.</div>\n\n<div>“Really? I wish I could fly with a jetpack!” said Sammy. “Have you <u>  3  </u> it?”</div>\n\n<div>Tex answered, “Many times. My grandpa lets me use a jetpack whenever\nwe visit him.”</div>\n\n<div>I knew that Tex had a great imagination (想象), but I\nhad never <u>  4  </u> him tell a lie before. I asked him to meet me\nin the kitchen. </div>\n\n<div>“Why would you lie to your friend?” I asked. </div>\n\n<div>Tex said, “Sammy <u>  5  </u> gets to do cool things that I wish I could do.\nI wanted to be the one talking about cool things for a change.”</div>\n\n<div>“Well, you should say <u>  6  </u> to\nSammy,” I said. “And from now on, always tell the truth. OK?”</div>\n\n<div>“OK,” said\nTex.</div>\n\n<div>But it wasn’t long before I <u>  7  </u> that my helpful advice wasn’t actually that\nhelpful. </div>\n\n<div>The next morning, while I was singing along to my favourite song on\nthe radio, Tex walked into my room and said, “I don’t think your voice <u>  8  </u> very good with that song.”</div>\n\n<div>“Nobody asked your idea,” I said.</div>\n\n<div>“I was just telling the truth!”said Tex.</div>\n\n<div>That afternoon, Indi ran into the house <u>  9  </u> her Art class and said,“ What do you think of\nthe horse I made?” </div>\n\n<div>“It’s 10 ,” said Tex. “It looks like a three-year-old made it.”</div>\n\n<div>“That wasn’t nice,” said Indi.</div>\n\n<div>Tex said, “But it’s true. I’m just being honest, like Arizona said!”\nHe turned to me. “Remember? You told me to tell the truth.”</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 5,
+                "is_objective": 0,
+                "parent_version": "0",
+                "question_ref_sorce": 10.0,
+                "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [],
+                "attachments": [],
+                "children": [{
+                    "sid": 0,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800186"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800183",
+                        "stem": " story",
+                        "attachments": []
+                    }, {"id": "950460955558800184", "stem": " song  ", "attachments": []}, {
+                        "id": "950460955558800185",
+                        "stem": " laughter",
+                        "attachments": []
+                    }, {"id": "950460955558800186", "stem": " conversation  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203300",
+                    "version_id": "950460940485554823"
+                }, {
+                    "sid": 1,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800187"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800187",
+                        "stem": " so",
+                        "attachments": []
+                    }, {"id": "950460955558800188", "stem": " if  ", "attachments": []}, {
+                        "id": "950460955558800189",
+                        "stem": " though",
+                        "attachments": []
+                    }, {"id": "950460955558800190", "stem": " because  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203301",
+                    "version_id": "950460940485554824"
+                }, {
+                    "sid": 2,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800192"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800191",
+                        "stem": " lost",
+                        "attachments": []
+                    }, {"id": "950460955558800192", "stem": " tried  ", "attachments": []}, {
+                        "id": "950460955558800193",
+                        "stem": " sold",
+                        "attachments": []
+                    }, {"id": "950460955558800194", "stem": " invented  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203302",
+                    "version_id": "950460940485554825"
+                }, {
+                    "sid": 3,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800197"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800195",
+                        "stem": " let",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800196",
+                        "stem": " helped  ",
+                        "attachments": []
+                    }, {"id": "950460955558800197", "stem": " heard", "attachments": []}, {
+                        "id": "950460955558800198",
+                        "stem": " made  ",
+                        "attachments": []
+                    }],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203303",
+                    "version_id": "950460940485554826"
+                }, {
+                    "sid": 4,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800201"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800199",
+                        "stem": " also",
+                        "attachments": []
+                    }, {"id": "950460955558800200", "stem": " still  ", "attachments": []}, {
+                        "id": "950460955558800201",
+                        "stem": " always",
+                        "attachments": []
+                    }, {"id": "950460955558800202", "stem": " never  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203304",
+                    "version_id": "950460940485554827"
+                }, {
+                    "sid": 5,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800206"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800203",
+                        "stem": " no",
+                        "attachments": []
+                    }, {"id": "950460955558800204", "stem": " sorry  ", "attachments": []}, {
+                        "id": "950460955558800205",
+                        "stem": " hello",
+                        "attachments": []
+                    }, {"id": "950460955558800206", "stem": " thanks  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203305",
+                    "version_id": "950460940485554828"
+                }, {
+                    "sid": 6,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800210"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800207",
+                        "stem": " agreed",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800208",
+                        "stem": " realized  ",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800209",
+                        "stem": " recalled",
+                        "attachments": []
+                    }, {"id": "950460955558800210", "stem": " decided  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203306",
+                    "version_id": "950460940485554829"
+                }, {
+                    "sid": 7,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800211"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800211",
+                        "stem": " sounds",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800212",
+                        "stem": " tastes  ",
+                        "attachments": []
+                    }, {"id": "950460955558800213", "stem": " looks", "attachments": []}, {
+                        "id": "950460955558800214",
+                        "stem": " smells  ",
+                        "attachments": []
+                    }],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203307",
+                    "version_id": "950460940485554830"
+                }, {
+                    "sid": 8,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800217"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800215",
+                        "stem": " before",
+                        "attachments": []
+                    }, {"id": "950460955558800216", "stem": " until  ", "attachments": []}, {
+                        "id": "950460955558800217",
+                        "stem": " after",
+                        "attachments": []
+                    }, {"id": "950460955558800218", "stem": " during  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203308",
+                    "version_id": "950460940485554831"
+                }, {
+                    "sid": 9,
+                    "stem": "",
+                    "curriculum_id": 0,
+                    "qtype": 1,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554822",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["950460955558800220"],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{
+                        "id": "950460955558800219",
+                        "stem": " wild",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800220",
+                        "stem": " terrible  ",
+                        "attachments": []
+                    }, {
+                        "id": "950460955558800221",
+                        "stem": " creative",
+                        "attachments": []
+                    }, {"id": "950460955558800222", "stem": " lively  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203309",
+                    "version_id": "950460940485554832"
+                }],
+                "id": "855789107375203299",
+                "version_id": "950460940485554822"
+            }]
+        }, {
+            "sid": 2,
+            "module_type_name": "阅读理解。根据材料内容，从各题后所给的A、B、C、D四个选项中选出最佳答案。（每小题2分，共40分）",
+            "module_type_url": "",
+            "children": [
                 {
                     "sid": 0,
-                    "answerType": 0,
-                    "assess": 1,
-                    "content": "随着里约奥运会的闭幕，巴西官方正要松一口气，花最少的钱办最大的事，为世界呈现了一个精彩的奥运盛宴，得到了国际奥委会主席巴赫的称赞。“如果还有下次，国际奥委会依然会选择在里约举办奥运会”，这句话是对里约最大的肯定。然而，在奥运圣火熄灭，各国运动员载誉归国以后，巴西迅速迎来了“后奥运时代”。曾经风光无限的里约热内卢，巨额债务问题接踵而至，而巨资修建的奥运场馆如今也人去楼空，把巴西拉回了现实，不再沉溺于过往的美丽梦境。如何走出经济困境，才是当前第一要务。虽然巴西官方已经能省就省，但公共交通、基础设施、奥运场馆等经费开销依然超过了120亿美元，对于目前经济低迷的巴西而言，无疑是雪上加霜。里约奥组委曾经强调说，很多支出都是向民间资本借贷，但现在看来，里约州政府的很多账单都难以找到企业买单，他们不得不拖欠公务员和事业单位工作人员的部分薪资",
-                    "score": 1
-                }
-            ],
-            "assess": 1,
-            "score": 0,
-            "versionId": "950460940484674741"
-        }
-    ])
+                    "stem": "<div>易读度★★☆ </div>\n\n<div>Charlotte Kelly, 12, is in sixth grade in\nVirginia, USA. Her dad is astronaut Scott Kelly.</div>\n\n<div>All\nIn a Year</div>\n\n<div>May 18, 2015</div>\n\n<div>It has been almost eight weeks since my dad\nleft the Earth. I am able to have video calls with my dad about once a month.\nWe had our second video call yesterday. Dad is doing well and staying very\nbusy. He has a lot of work to do! He taught me how to reply to his emails. I’m\nnot very good at that. He has given me a tour of parts of the International\nSpace Station and I was able to meet a few of the other astronauts. I do miss\nhim and the video calls make it a lot easier.</div>\n\n<div>Happy\nFather’s Day</div>\n\n<div>June 21, 2015</div>\n\n<div>I am on summer break from school right now,\nbut before school ended, my dad was able to have a video call with my class.\nAll of the kids really enjoyed seeing him and asking him questions about space.\nI don’t care how many times I see it; I still have to laugh when I see him\nfloating around. Two nights ago, my mum and I went to a beach party with my\nclassmate Joe and his family. Just around 9:10 p.m., we were all able to look\ninto the night sky and see the International Space Station fly over. For those\nfour minutes we were all watching; I couldn’t help but miss my dad. Today is Father’s\nDay. My sister and I were able to have a video talk with our dad at the same\ntime. She was in Houston, I was in Virginia Beach and my dad was flying over\nus! He took a picture of me with Virginia Beach in the background.</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 5,
+                    "is_objective": 0,
+                    "parent_version": "0",
+                    "question_ref_sorce": 5.0,
+                    "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                    "options": [],
+                    "attachments": [],
+                    "children": [{
+                        "sid": 0,
+                        "stem": "When did Charlotte's father leave the Earth?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554833",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800225"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800223",
+                            "stem": " In January.",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800224",
+                            "stem": " In February.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800225",
+                            "stem": " In March.",
+                            "attachments": []
+                        }, {"id": "950460955558800226", "stem": " In April.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203311",
+                        "version_id": "950460940485554834"
+                    }, {
+                        "sid": 1,
+                        "stem": " How often does Charlotte have video calls with her father?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554833",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800230"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800227",
+                            "stem": " Almost every day.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800228",
+                            "stem": " About once a week.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800229",
+                            "stem": " About twice a month.  ",
+                            "attachments": []
+                        }, {"id": "950460955558800230", "stem": " About once a month.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203312",
+                        "version_id": "950460940485554835"
+                    }, {
+                        "sid": 2,
+                        "stem": " What happened at about 9:10 p.m. two nights before Father's Day?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554833",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800233"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800231",
+                            "stem": " Charlotte's father came back home.</div>  <div>",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800232",
+                            "stem": " Charlotte made a video call to her father.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800233",
+                            "stem": " Charlotte saw the International Space Station fly over.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800234",
+                            "stem": " Charlotte's father took a picture of himself in space.</div>  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203313",
+                        "version_id": "950460940485554836"
+                    }, {
+                        "sid": 3,
+                        "stem": " What did Charlotte's sister and she do on Father's Day?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554833",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800235"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800235",
+                            "stem": " They had a video talk with their father.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800236",
+                            "stem": " They drew a picture of their father in space.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800237",
+                            "stem": " They sent their father an email.  ",
+                            "attachments": []
+                        }, {"id": "950460955558800238", "stem": " They had a beach party.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203314",
+                        "version_id": "950460940485554837"
+                    }, {
+                        "sid": 4,
+                        "stem": " The material is probably from ______.  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554833",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800239"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800239",
+                            "stem": " a diary",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800240",
+                            "stem": " a notice  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800241",
+                            "stem": " a science report",
+                            "attachments": []
+                        }, {"id": "950460955558800242", "stem": " a piece of news  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203315",
+                        "version_id": "950460940485554838"
+                    }],
+                    "id": "855789107375203310",
+                    "version_id": "950460940485554833"
+                }, {
+                    "sid": 1,
+                    "stem": "<div>易读度★★☆ </div>\n\n<div>Alice was a student in a secondary school.\nThe school was on the other side of the street from my house. Every day, I\nwatched her play basketball after school from my house. She played very well,\nmuch better than any other of her classmates. And she never stopped. She practised\nover and over again, sometimes until it was very dark.</div>\n\n<div>One day, I asked her, “Why do you pracitse so hard? You are playing\nvery well.”</div>\n\n<div>“That’s because I want to play in the city basketball team,” she\nlooked at me and said proudly. “But I’m still not good enough. I must work\nhard.” I was <u>moved</u> by her great courage.</div>\n\n<div>Another day, I saw her crying on the grass, instead of playing\nbasketball. I walked across the street and sat down by her side. </div>\n\n<div>“Why are you crying, girl?” I asked. </div>\n\n<div>“The coach of the city basketball team told me that I couldn’t go on\nplaying basketball because I was too short.”</div>\n\n<div>But some days later, I saw her playing basketball again, practising\neven harder than before. I was curious and asked her the reason.</div>\n\n<div>“My father told me if my dream is big enough, nothing can stop me.”</div>\n\n<div>I was moved again.</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 5,
+                    "is_objective": 0,
+                    "parent_version": "0",
+                    "question_ref_sorce": 5.0,
+                    "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                    "options": [],
+                    "attachments": [],
+                    "children": [{
+                        "sid": 0,
+                        "stem": "What do we know from Paragraph 1?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554839",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800246"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800243",
+                            "stem": " Alice was the writer’s classmate.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800244",
+                            "stem": " Alice often played basketball in the street.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800245",
+                            "stem": " Alice was very hard-working and often studied till late.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800246",
+                            "stem": " Alice’s school was not far away from the writer’s home.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203317",
+                        "version_id": "950460940485554840"
+                    }, {
+                        "sid": 1,
+                        "stem": " The underlined word“moved” has the same meaning as the word “______”.  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554839",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800248"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800247",
+                            "stem": " changed",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800248",
+                            "stem": " touched  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800249",
+                            "stem": " impressed",
+                            "attachments": []
+                        }, {"id": "950460955558800250", "stem": " respected  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203318",
+                        "version_id": "950460940485554841"
+                    }, {
+                        "sid": 2,
+                        "stem": " What was Alice like?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554839",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800253"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800251",
+                            "stem": " Patient and kind.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800252",
+                            "stem": " Organized and creative.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800253",
+                            "stem": " Hard-working and modest.  ",
+                            "attachments": []
+                        }, {"id": "950460955558800254", "stem": " Powerful and curious.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203319",
+                        "version_id": "950460940485554842"
+                    }, {
+                        "sid": 3,
+                        "stem": "Which of the following is TRUE according to the passage?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554839",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800255"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800255",
+                            "stem": " Alice has a good father.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800256",
+                            "stem": " Alice was good at all her lessons.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800257",
+                            "stem": " Alice was the writer’s neighbour.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800258",
+                            "stem": " Alice’s father had many good friends.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203320",
+                        "version_id": "950460940485554843"
+                    }, {
+                        "sid": 4,
+                        "stem": " What would probably happen in the future?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554839",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800261"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800259",
+                            "stem": " She might give up playing basketball.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800260",
+                            "stem": " She might go to another city.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800261",
+                            "stem": " She might join another basketball team.  ",
+                            "attachments": []
+                        }, {"id": "950460955558800262", "stem": " She might drop out of school.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203321",
+                        "version_id": "950460940485554844"
+                    }],
+                    "id": "855789107375203316",
+                    "version_id": "950460940485554839"
+                }, {
+                    "sid": 2,
+                    "stem": "<div>易读度★★☆ </div>\n\n<div>It was early morning in a small village in\nKenya, Africa. Women and children were carrying heavy containers (容器) of water\non their heads. They walked many miles to get the water. It was hot, and they\nwere tired. They could only carry a few containers a day. A young British woman\nlearned about how difficult this was for them. She wanted to help. </div>\n\n<div>Who is the young woman? Her name is Emily Cummins. How did she help?\nShe invented a water carrier for the people in Kenya.</div>\n\n<div>Emily Cummins is an engineer. She designs useful products for places\nwithout many natural resources. These places often don’t have a lot of water.\nThey also don’t have a lot of oil, coal or gas. Cummins’ products don’t use\noil, coal or gas. They use other kinds of energy, such as the sun. So people\ncan continue to use them in the future without hurting our planet. </div>\n\n<div>How did Cummins get started? As a young child in England, she loved\nto work with her grandfather in his workshop. He taught her how to use his\ntools. He showed her how to make toys and boxes from small pieces of metal. </div>\n\n<div>Cummins designed her first product when she was in high school and\njust 15 years old. While she was still a high school student, Cummins designed\na new kind of fridge. Why? Fridges normally use a lot of electricity. They are\ntoo expensive for many people in developing countries. Cummins' fridge is not\nexpensive. It's made of cheap, local materials. </div>\n\n<div>After leaving school, Cummins spent five months in Africa. She\nwanted to learn more about life there, so she volunteered at a school in\nNamibia. There, she could test and improve her designs. Her fridge became a\ngreat success! It has helped thousands of people.</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 5,
+                    "is_objective": 0,
+                    "parent_version": "0",
+                    "question_ref_sorce": 5.0,
+                    "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                    "options": [],
+                    "attachments": [],
+                    "children": [{
+                        "sid": 0,
+                        "stem": "What problem did people in a small village in Kenya face?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554845",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800266"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800263",
+                            "stem": " They had no fridge to keep food fresh.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800264",
+                            "stem": " There was not enough food to eat.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800265",
+                            "stem": " They had no clean water to drink.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800266",
+                            "stem": " It was tiring to carry water home.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203323",
+                        "version_id": "950460940485554846"
+                    }, {
+                        "sid": 1,
+                        "stem": " Who got Cummins interested in engineering?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554845",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800269"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800267",
+                            "stem": " Her father.",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800268",
+                            "stem": " Her mother.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800269",
+                            "stem": " Her grandfather.",
+                            "attachments": []
+                        }, {"id": "950460955558800270", "stem": " Her aunt.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203324",
+                        "version_id": "950460940485554847"
+                    }, {
+                        "sid": 2,
+                        "stem": " Which of the following is TRUE about the fridge Cummins designed?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554845",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800273"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800271",
+                            "stem": " It is easy to carry.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800272",
+                            "stem": " It uses electricity.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800273",
+                            "stem": " It is popular in Namibia.  ",
+                            "attachments": []
+                        }, {"id": "950460955558800274", "stem": " It costs a lot in Namibia.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203325",
+                        "version_id": "950460940485554848"
+                    }, {
+                        "sid": 3,
+                        "stem": " Cummins designed her first product when she was ______.  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554845",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800276"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800275",
+                            "stem": " a young child  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800276",
+                            "stem": " a high school student  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800277",
+                            "stem": " in college",
+                            "attachments": []
+                        }, {"id": "950460955558800278", "stem": " in Africa  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203326",
+                        "version_id": "950460940485554849"
+                    }, {
+                        "sid": 4,
+                        "stem": " Why did Cummins spend five months in Africa?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554845",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800282"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800279",
+                            "stem": " Because her parents worked there.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800280",
+                            "stem": " Because she studied at a school there.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800281",
+                            "stem": " Because she wanted to sell her fridges.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800282",
+                            "stem": " Because she wanted to test and improve her designs.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203327",
+                        "version_id": "950460940485554850"
+                    }],
+                    "id": "855789107375203322",
+                    "version_id": "950460940485554845"
+                }, {
+                    "sid": 3,
+                    "stem": "<div>易读度★★★</div>\n\n<div>The Boston Marathon (波士顿马拉松) is\none of the world’s oldest and most famous races. Nearly half the competitors in\nthe 26.2-mile race are women. But for most of the race’s 119-year history, only\nmen were allowed to compete. </div>\n\n<div>A woman named Gibb helped change that in 1966. That year she took\npart in the Boston Marathon and finished ahead of (在……前面) most\nof the men. Gibb first saw and got to know the Boston Marathon in 1964. And she\nwanted to run the race herself. For nearly two years, Gibb trained hard to prepare\nfor the race. But when she sent in an application for the 1966 race, she was\nrefused. </div>\n\n<div>At the time, the longest official races for women were only 1.5\nmiles. Many people didn’t think women were able to run longer than that. But\nthe 23-year-old Gibb refused to give up her dream. She came up with a plan to\nrun the race anyway. On April 19, she showed up at the marathon. She wore her\nbrother’s shorts and a sweatshirt to disguise that she was a woman.</div>\n\n<div>Gibb hid near the starting line. When the race began, she jumped\ninto the crowd. Shortly into the race, Gibb took off her sweatshirt. To her\nsurprise, the crowd cheered when they realized she was a woman. Gibb finished\nthe race in 3 hours and 21 minutes — faster than two thirds of the men. </div>\n\n<div>In the years that followed, she and other women ran in the Boston\nMarathon, even though the rules still stopped women from running in the race.\nFinally, in 1972, the marathon was officially opened to women. </div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 5,
+                    "is_objective": 0,
+                    "parent_version": "0",
+                    "question_ref_sorce": 5.0,
+                    "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                    "options": [],
+                    "attachments": [],
+                    "children": [{
+                        "sid": 0,
+                        "stem": "When did the first Boston Marathon begin?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554851",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800284"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800283",
+                            "stem": " In 1853.",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800284",
+                            "stem": " In 1897.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800285",
+                            "stem": " In 1905.",
+                            "attachments": []
+                        }, {"id": "950460955558800286", "stem": " In 1964.  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203329",
+                        "version_id": "950460940485554852"
+                    }, {
+                        "sid": 1,
+                        "stem": " What does the underlined word “disguise” in Paragraph 4 mean in Chinese?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554851",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800290"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800287",
+                            "stem": " 炫耀",
+                            "attachments": []
+                        }, {"id": "950460955558800288", "stem": " 证明  ", "attachments": []}, {
+                            "id": "950460955558800289",
+                            "stem": " 宣布",
+                            "attachments": []
+                        }, {"id": "950460955558800290", "stem": " 掩饰  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203330",
+                        "version_id": "950460940485554853"
+                    }, {
+                        "sid": 2,
+                        "stem": "As for Gibb’s first Boston Marathon, she finished ______.  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554851",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800293"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800291",
+                            "stem": " first   ",
+                            "attachments": []
+                        }, {"id": "950460955558800292", "stem": " last  ", "attachments": []}, {
+                            "id": "950460955558800293",
+                            "stem": " faster than most of the men  ",
+                            "attachments": []
+                        }, {"id": "950460955558800294", "stem": " slower than most of the men  ", "attachments": []}],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203331",
+                        "version_id": "950460940485554854"
+                    }, {
+                        "sid": 3,
+                        "stem": "Which of the following is TRUE according to the passage?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554851",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800297"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800295",
+                            "stem": " Gibb saw the Boston Marathon for the first time in 1966.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800296",
+                            "stem": " Gibb’s brother took part in the Boston Marathon with her.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800297",
+                            "stem": " It took Gibb about two years to train for her first marathon.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800298",
+                            "stem": " People were angry when they saw Gibb running in the marathon.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203332",
+                        "version_id": "950460940485554855"
+                    }, {
+                        "sid": 4,
+                        "stem": " What’s the passage mainly about?  ",
+                        "curriculum_id": 0,
+                        "qtype": 1,
+                        "is_objective": 1,
+                        "parent_version": "950460940485554851",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": ["950460955558800302"],
+                            "solving_idea": "",
+                            "attachments": [],
+                            "points": [],
+                            "sames": []
+                        },
+                        "options": [{
+                            "id": "950460955558800299",
+                            "stem": " The history of the Boston Marathon.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800300",
+                            "stem": " Some famous Boston Marathon runners.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800301",
+                            "stem": " How to prepare for the Boston Marathon.  ",
+                            "attachments": []
+                        }, {
+                            "id": "950460955558800302",
+                            "stem": " The first woman to run the Boston Marathon.  ",
+                            "attachments": []
+                        }],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107375203333",
+                        "version_id": "950460940485554856"
+                    }],
+                    "id": "855789107375203328",
+                    "version_id": "950460940485554851"
+                }]
+        }, {
+            "sid": 3,
+            "module_type_name": "根据语境及汉语提示，写出所缺单词。（每小题1分，共5分）",
+            "module_type_url": "",
+            "children": [{
+                "sid": 1,
+                "stem": "<div>Let’s look up the date in the {#blank#}1{#/blank#} (日历) to make\nthe plan better.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["calendar"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800304", "stem": "calendar", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203335",
+                "version_id": "950460940485554858"
+            }, {
+                "sid": 2,
+                "stem": "<div>Many students think that {#blank#}1{#/blank#} (语法) is\ndifficult to learn.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["grammar"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800305", "stem": "grammar", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203336",
+                "version_id": "950460940485554859"
+            }, {
+                "sid": 3,
+                "stem": "<div>Jack is hard-working, and he always\nworks to a high {#blank#}1{#/blank#} (标准).</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["standard"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800306", "stem": "standard", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203337",
+                "version_id": "950460940485554860"
+            }, {
+                "sid": 4,
+                "stem": "<div>The {#blank#}1{#/blank#} (高速的) railways\nhave spread across most big cities in China.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {
+                    "answers": ["high-speed"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{"id": "950460955558800307", "stem": "high-speed", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203338",
+                "version_id": "950460940485554861"
+            }]
+        }, {
+            "sid": 4,
+            "module_type_name": "根据语境，用括号内所给单词的适当形式填空。（每小题1分，共10分）",
+            "module_type_url": "",
+            "children": [{
+                "sid": 0,
+                "stem": "<div>We all know that a year is {#blank#}1{#/blank#}\n(divide) into twelve months.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["divided"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800308", "stem": "divided", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203339",
+                "version_id": "950460940485554862"
+            }, {
+                "sid": 1,
+                "stem": "<div>Lei Feng devoted most of his life to {#blank#}1{#/blank#}\n(help) others.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["helping"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800309", "stem": "helping", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203340",
+                "version_id": "950460940485554863"
+            }, {
+                "sid": 2,
+                "stem": "<div>We shouted excitedly when seeing David\nBeckham {#blank#}1{#/blank#} (appear) on the playground.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["appear"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800310", "stem": "appear", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203341",
+                "version_id": "950460940485554864"
+            }, {
+                "sid": 3,
+                "stem": "<div>The idea sounds great, but it is not\n{#blank#}1{#/blank#} (practice).</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {
+                    "answers": ["practical"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{"id": "950460955558800311", "stem": "practical", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203342",
+                "version_id": "950460940485554865"
+            }, {
+                "sid": 4,
+                "stem": "<div>This kind of cat is not {#blank#}1{#/blank#} (suit)\nfor Tom.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["suitable"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800312", "stem": "suitable", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203343",
+                "version_id": "950460940485554866"
+            }, {
+                "sid": 5,
+                "stem": "<div>Jack used to be a bright and {#blank#}1{#/blank#}\n(live) boy, but now he is very quiet.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["lively"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800313", "stem": "lively", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203344",
+                "version_id": "950460940485554867"
+            }, {
+                "sid": 6,
+                "stem": "<div>Many accidents happened because of\npeople’s {#blank#}1{#/blank#} (care).</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {
+                    "answers": ["carelessness"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{"id": "950460955558800314", "stem": "carelessness", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203345",
+                "version_id": "950460940485554868"
+            }, {
+                "sid": 7,
+                "stem": "<div>If you are {#blank#}1{#/blank#} (patient),\nyou’ll get angry easily while waiting for others.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {
+                    "answers": ["impatient"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{"id": "950460955558800315", "stem": "impatient", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203346",
+                "version_id": "950460940485554869"
+            }, {
+                "sid": 8,
+                "stem": "<div>Jack always goes to bed and gets up at a\n{#blank#}1{#/blank#} (fix) time.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["fixed"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800316", "stem": "fixed", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203347",
+                "version_id": "950460940485554870"
+            }, {
+                "sid": 9,
+                "stem": "<div>This jacket fits me very well, but it\ncosts too much. I can’t afford {#blank#}1{#/blank#} (buy) it.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 1.0,
+                "ref_info": {"answers": ["to buy"], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [{"id": "950460955558800317", "stem": "to buy", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203348",
+                "version_id": "950460940485554871"
+            }]
+        }, {
+            "sid": 5,
+            "module_type_name": "任务型阅读（每小题1分，共10分）",
+            "module_type_url": "",
+            "children": [{
+                "sid": 0,
+                "stem": "<div>根据材料内容，用正确的英语单词完成表格，每空一词。</div>\n\n<div>易读度★★☆</div>\n\n<div>What was the most dangerous engineering\nproject? It was the Panama Canal (巴拿马运河). It is in\nCentral America and is 50 miles long. It lets ships pass between the Atlantic\nand Pacific oceans. The French started the project in the 1880s. However, the\nwork was too difficult, and they stopped. The United States continued the\nproject in 1904 and finished it in 1914. About 56,300 people worked on the\ncanal. </div>\n\n<div>The area around the canal was very dangerous. It was very hot and\nwet, with about 267cm of rain in a year. The heavy rain often made the rivers\nflood. Thousands of workers died from illnesses and accidents. </div>\n\n<div>One of the greatest engineering achievements of the 20th century was\nthe Alaska Pipeline (阿拉斯加输油管). In 1968, an oil company found the largest oil field in North\nAmerica. But, how could they get oil from Alaska to the rest of the United\nStates? They worked with some other oil companies to build a pipeline. </div>\n\n<div>The Alaska Pipeline is one of the longest pipelines in the world. It\ncarries oil for 800 miles through the cold, hard land of Alaska. It crosses\nthree mountains and more than 800 rivers. More than 70,000 workers built it.\nThey worked for more than three years in very cold temperatures. They finished\nthe work in 1977. </div>\n\n<div> <img width=288 height=394 src=\"../packages/catalogue_4799_1047107/media/dd328e7b20d40174bf6cab4ff1e78d75.jpg\" v:shapes=\"图片_x0020_1\"> </div>   \n\n",
+                "curriculum_id": 0,
+                "qtype": 5,
+                "is_objective": 0,
+                "parent_version": "0",
+                "question_ref_sorce": 10.0,
+                "ref_info": {"answers": [""], "solving_idea": "", "attachments": [], "points": [], "sames": []},
+                "options": [],
+                "attachments": [],
+                "children": [{
+                    "sid": 0,
+                    "stem": "<div>{#blank#}1{#/blank#} </div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["connects "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800318", "stem": "connects ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203350",
+                    "version_id": "950460940485554873"
+                }, {
+                    "sid": 1,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["fifty "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800319", "stem": "fifty ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203351",
+                    "version_id": "950460940485554874"
+                }, {
+                    "sid": 2,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["Americans "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800320", "stem": "Americans ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203352",
+                    "version_id": "950460940485554875"
+                }, {
+                    "sid": 3,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["weather "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800321", "stem": "weather ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203353",
+                    "version_id": "950460940485554876"
+                }, {
+                    "sid": 4,
+                    "stem": "<div>{#blank#}1{#/blank#}</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["accidents "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800322", "stem": "accidents ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203354",
+                    "version_id": "950460940485554877"
+                }, {
+                    "sid": 5,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["dangerous "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800323", "stem": "dangerous ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203355",
+                    "version_id": "950460940485554878"
+                }, {
+                    "sid": 6,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["field "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800324", "stem": "field ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203356",
+                    "version_id": "950460940485554879"
+                }, {
+                    "sid": 7,
+                    "stem": "<div>\n{#blank#}1{#/blank#}</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["longest "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800325", "stem": "longest ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203357",
+                    "version_id": "950460940485554880"
+                }, {
+                    "sid": 8,
+                    "stem": "<div>{#blank#}1{#/blank#}\n</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["three "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800326", "stem": "three ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203358",
+                    "version_id": "950460940485554881"
+                }, {
+                    "sid": 9,
+                    "stem": "<div>{#blank#}1{#/blank#}</div>\n\n",
+                    "curriculum_id": 0,
+                    "qtype": 3,
+                    "is_objective": 1,
+                    "parent_version": "950460940485554872",
+                    "question_ref_sorce": 1.0,
+                    "ref_info": {
+                        "answers": ["mountains  "],
+                        "solving_idea": "",
+                        "attachments": [],
+                        "points": [],
+                        "sames": []
+                    },
+                    "options": [{"id": "950460955558800327", "stem": "mountains  ", "attachments": []}],
+                    "attachments": [],
+                    "children": [],
+                    "id": "855789107375203359",
+                    "version_id": "950460940485554882"
+                }],
+                "id": "855789107375203349",
+                "version_id": "950460940485554872"
+            }]
+        }, {
+            "sid": 6,
+            "module_type_name": "短文填空。根据短文内容及所给首字母提示，写出所缺单词，使短文完整、通顺。（每小题1分，共10分）",
+            "module_type_url": "",
+            "children": [{
+                "sid": 0,
+                "stem": "<div>易读度★★☆</div>\n\n<div>My name is Matt Perry and I’m 14 years old.\nMy family moved to Tokyo, Japan from Denver, Colorado, USA three years ago. At\nfirst it was a real c{#blank#}1{#/blank#} shock (冲击) and I\nthought I’d never fit in. But now Tokyo f{#blank#}2{#/blank#} just like home, and I will miss\nit when we go back to Denver next year. </div>\n\n<div>My dad often works in other countries. In the past, Mum and I stayed\nin Denver, but we didn’t want to be a{#blank#}3{#/blank#} from my dad again, so this time we\nall moved. I had always thought that Japanese people were quite s{#blank#}4{#/blank#}, but\nthey’re really outgoing. When we first arrived in Tokyo, I j{#blank#}5{#/blank#} a football\nclub and I made lots of American, English and Japanese friends. I have been\nlearning the l{#blank#}6{#/blank#} for three years now and my Japanese friends say I speak it\npretty well. But I don’t like writing Japanese because I always make m{#blank#}7{#/blank#} in\nwriting the characters (文字).</div>\n\n<div>I miss my model cars and books in my Denver’s home. I also miss\nbasketball. It was my favourite sport b{#blank#}8{#/blank#} we came to Japan. My mum misses\nher g{#blank#}9{#/blank#} because we don’t live in a house, but an apartment. Anyway, we will\nbe back in Denver next year and I’m sure we will m{#blank#}10{#/blank#} so many things about\nJapan.</div>\n\n",
+                "curriculum_id": 0,
+                "qtype": 3,
+                "is_objective": 1,
+                "parent_version": "0",
+                "question_ref_sorce": 10.0,
+                "ref_info": {
+                    "answers": ["ulture", "eels", "way", "erious", "oins", "anguage", "istakes", "efore", "arden", "iss"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{
+                    "id": "950460955558800328",
+                    "stem": "ulture",
+                    "attachments": []
+                }, {"id": "950460955558800329", "stem": "eels", "attachments": []}, {
+                    "id": "950460955558800330",
+                    "stem": "way",
+                    "attachments": []
+                }, {"id": "950460955558800331", "stem": "erious", "attachments": []}, {
+                    "id": "950460955558800332",
+                    "stem": "oins",
+                    "attachments": []
+                }, {"id": "950460955558800333", "stem": "anguage", "attachments": []}, {
+                    "id": "950460955558800334",
+                    "stem": "istakes",
+                    "attachments": []
+                }, {"id": "950460955558800335", "stem": "efore", "attachments": []}, {
+                    "id": "950460955558800336",
+                    "stem": "arden",
+                    "attachments": []
+                }, {"id": "950460955558800337", "stem": "iss", "attachments": []}],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203360",
+                "version_id": "950460940485554883"
+            }, {
+                "sid": 0,
+                "stem": "<div>假如你是玛丽，是九年级（2）班的一名学生，你的同学也是好朋友杰克想竞选学生会主席的职位。现在请你根据下面的图示信息，向负责此事的张老师写一封推荐信，推荐杰克为学生会主席。</div>\n\n<div> <img src=\"../packages/catalogue_4799_1047107/media/b3c575dab2b85a3ae571fbedda781098.jpg\" v:shapes=\"图片_x0020_4\"> </div>  <div>要求：</div>  <div>① 推荐信须包含所有提示信息，可进行适当扩充；</div>  <div>② 尽可能运用本章所学到的词汇和表达；</div>  <div>③ 80—100词，信的开头和结尾已经给出，但不计入要求词数。</div>  <div> <img src=\"../packages/catalogue_4799_1047107/media/1322894914eadf2cf72886b86eb44467.jpg\" v:shapes=\"图片_x0020_7\"> </div>  ",
+                "curriculum_id": 0,
+                "qtype": 6,
+                "is_objective": 0,
+                "parent_version": "0",
+                "question_ref_sorce": 20.0,
+                "ref_info": {
+                    "answers": ["<u>Dear Mr Zhang,</u></div> <div><u>I am writing to recommend Jack as our new chairperson of the Students’Union. I think he has</u> many strong qualities for this position. </div> <div>Jack is confident and not afraid of making speeches in front of many people. He is clever. He has won all kinds of competitions, but he is modest and never shows off. Jack is well organized. He plans his study and work very well. And he is creative. He always comes up with good ideas for our school activities. He is always ready to help others, so he is popular with our classmates. I think Jack is the most suitable person to be the chairperson. I hope you can agree with me.</div> <div>Yours sincerely,</div> <div>Mary</div>"],
+                    "solving_idea": "",
+                    "attachments": [],
+                    "points": [],
+                    "sames": []
+                },
+                "options": [{
+                    "id": "950460955558800338",
+                    "stem": "<u>Dear Mr Zhang,</u></div> <div><u>I am writing to recommend Jack as our new chairperson of the Students’Union. I think he has</u> many strong qualities for this position. </div> <div>Jack is confident and not afraid of making speeches in front of many people. He is clever. He has won all kinds of competitions, but he is modest and never shows off. Jack is well organized. He plans his study and work very well. And he is creative. He always comes up with good ideas for our school activities. He is always ready to help others, so he is popular with our classmates. I think Jack is the most suitable person to be the chairperson. I hope you can agree with me.</div> <div>Yours sincerely,</div> <div>Mary</div>",
+                    "attachments": []
+                }],
+                "attachments": [],
+                "children": [],
+                "id": "855789107375203361",
+                "version_id": "950460940485554884"
+            }]
+        }],
+        "id": "634828917904323380",
+        "version_id": null
+    },[{"answers":[{"sid":0,"content":"950460955558800123","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554807","score":0,"assess":2},{"answers":[{"sid":1,"content":"950460955558800128","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554808","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800133","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554809","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800138","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554810","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800139","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554811","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800144","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554812","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800149","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554813","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800154","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554814","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800155","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554815","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800160","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554816","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800165","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554817","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800170","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554818","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800171","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554819","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800176","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554820","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800181","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554821","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800186","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554823","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800187","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554824","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800192","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554825","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800197","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554826","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800202","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554827","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800203","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554828","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800208","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554829","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800213","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554830","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800218","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554831","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800219","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554832","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800224","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554834","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800229","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554835","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800234","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554836","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800235","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554837","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800240","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554838","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800245","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554840","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800250","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554841","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800251","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554842","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800256","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554843","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800261","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554844","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800266","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554846","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800267","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554847","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800272","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554848","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800277","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554849","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800282","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554850","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800283","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554852","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800288","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554853","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800293","assess":1,"score":1,"answerType":1}],"versionId":"950460940485554854","score":1,"assess":1},{"answers":[{"sid":0,"content":"950460955558800298","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554855","score":0,"assess":2},{"answers":[{"sid":0,"content":"950460955558800299","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554856","score":0,"assess":2},{"answers":[{"sid":0,"content":"AA","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554858","score":0,"assess":2},{"answers":[{"sid":0,"content":"BB","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554859","score":0,"assess":2},{"answers":[{"sid":0,"content":"CC","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554860","score":0,"assess":2},{"answers":[{"sid":0,"content":"DD","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554861","score":0,"assess":2},{"answers":[{"sid":0,"content":"EE","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554862","score":0,"assess":2},{"answers":[{"sid":0,"content":"FF","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554863","score":0,"assess":2},{"answers":[{"sid":0,"content":"GGG","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554864","score":0,"assess":2},{"answers":[{"sid":0,"content":"HH","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554865","score":0,"assess":2},{"answers":[{"sid":0,"content":"II","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554866","score":0,"assess":2},{"answers":[{"sid":0,"content":"JJ","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554867","score":0,"assess":2},{"answers":[{"sid":0,"content":"KK","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554868","score":0,"assess":2},{"answers":[{"sid":0,"content":"LL","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554869","score":0,"assess":2},{"answers":[{"sid":0,"content":"MM","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554870","score":0,"assess":2},{"answers":[{"sid":0,"content":"NN","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554871","score":0,"assess":2},{"answers":[{"sid":0,"content":"OO","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554873","score":0,"assess":2},{"answers":[{"sid":0,"content":"PP","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554874","score":0,"assess":2},{"answers":[{"sid":0,"content":"QQ","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554875","score":0,"assess":2},{"answers":[{"sid":0,"content":"RRR","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554876","score":0,"assess":2},{"answers":[{"sid":0,"content":"SSS","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554877","score":0,"assess":2},{"answers":[{"sid":0,"content":"TT","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554878","score":0,"assess":2},{"answers":[{"sid":0,"content":"UUU","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554879","score":0,"assess":2},{"answers":[{"sid":0,"content":"VV","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554880","score":0,"assess":2},{"answers":[{"sid":0,"content":"WWW","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554881","score":0,"assess":2},{"answers":[{"sid":0,"content":"XXX","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554882","score":0,"assess":2},{"answers":[{"sid":0,"content":"YY","assess":2,"score":0,"answerType":1},{"sid":1,"content":"ZZZ","assess":2,"score":0,"answerType":1},{"sid":2,"content":"AAA","assess":2,"score":0,"answerType":1},{"sid":3,"content":"BBB","assess":2,"score":0,"answerType":1},{"sid":4,"content":"CCC","assess":2,"score":0,"answerType":1},{"sid":5,"content":"DDD","assess":2,"score":0,"answerType":1},{"sid":6,"content":"EEE","assess":2,"score":0,"answerType":1},{"sid":7,"content":"FFF","assess":2,"score":0,"answerType":1},{"sid":8,"content":"GGG","assess":2,"score":0,"answerType":1},{"sid":9,"content":"HHH","assess":2,"score":0,"answerType":1}],"versionId":"950460940485554883","score":0,"assess":2},{"answers":[{"sid":0,"content":"III","assess":4,"score":0,"answerType":1}],"versionId":"950460940485554884","score":0,"assess":4}])
 </script>
 </body>
 </html>

@@ -21,11 +21,9 @@
     //新增对可输入DIV的监控
     ko.bindingHandlers.editableText = {
         init: function (element, valueAccessor, allBindingsAccessor) {
-            ko.utils.registerEventHandler(element, "keyup", function () {
-
+            ko.utils.registerEventHandler(element, "blur", function () {
                 var modelValue = valueAccessor();
                 var elementValue = element.value;
-
                 if (ko.isWriteableObservable(modelValue)) {
                     var editableValue = {
                         index: parseInt($(element).attr("index") || 0),

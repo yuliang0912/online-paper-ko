@@ -104,7 +104,7 @@ define(function (r, exports) {
         <p><span class="num" data-bind="text: $index() + 1 + \'、\'"></span><span data-bind="html: stem"></span></p>\
     </div>\
     <div class="txtBox">\
-        <textarea cols="30" rows="10" maxlength="2000" data-bind="editableText:$parent.editableText" class="txtArea"></textarea>\
+        <textarea cols="30" rows="10" maxlength="2000" data-bind="editableText:editableText" class="txtArea"></textarea>\
     </div>\
     <div class="finish" data-bind="visible: isLastQuestion">\
         <a class="finish-btn" data-bind="click:$root.correctQuestion" href="javascript:;">完&nbsp;&nbsp;成</a>\
