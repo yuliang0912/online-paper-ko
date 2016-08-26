@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在线作答</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-sca.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <link rel="stylesheet" href="js/plyr/dist/plyr.css">
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <link rel="stylesheet" href="css/gestalt.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <script src="js/adaptive.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/swiper/swiper.min.js"></script>
+    <script src="js/plyr/dist/plyr.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/require.js"></script>
+</head>
+<body data-bind="if: paper">
+<div class="swiper-container swiper-container-h"
+     data-bind="template:{ name: 'paperTemplate', data: paper, afterRender: afterRender}"></div>
+<script type="text/javascript">
+    $.showLoading();
+
+    function callback(data, userAnswer) {
+        require(["ko", "ciwong", "paper", "cordova", "questionResultTemplate"], function (ko, ciwong, paper) {
+            var settings = {
+                data: (typeof data) === "object" ? data : JSON.parse(data),
+                userAnswer: (typeof userAnswer) === "object" ? userAnswer : JSON.parse(userAnswer),
+                afterRender: after
+            }
+            ko.applyBindings(new paper.viewModel.resultView(settings));
+        })
+    }
+
+    function after() {
+        var currPageY = 0,
+                boxH,
+                questBox = '.questArea',
+                answerBox = '.answerArea',
+                wrapperH = $(window).height(),
+                answerAreaH = $(answerBox).height(),
+                margins = parseInt(wrapperH * 0.1);
+
+        var sw1 = new Swiper('.swiper-container-h')
+        new Swiper('.answerInfo', {nested: true})
+
+        $(questBox).height(wrapperH - answerAreaH);
+        $(".weui_toast,.weui_masktransparent").remove()
+        $('.toggleBox .btn').on('touchstart', function (e) {
+            var box = $(this).closest('.wrapper');
+            var _touch = e.originalEvent.targetTouches[0];
+            currPageY = _touch.pageY;
+            boxH = box.find(answerBox).height();
+            sw1 && sw1.lockSwipes();
+            e.preventDefault();
+        });
+        $('.toggleBox .btn').on('touchmove', function (e) {
+            var box = $(this).closest('.wrapper');
+            var _touch = e.originalEvent.targetTouches[0];
+            var currY = _touch.pageY;
+
+            if (currY < currPageY) {
+                if (box.find(answerBox).height() >= wrapperH - margins) {
+                    return;
+                }
+                var moveLen = currPageY - _touch.pageY;
+                box.find(answerBox).height(boxH + moveLen);
+                box.find(questBox).height(wrapperH - boxH - moveLen);
+            } else {
+                if (box.find(answerBox).height() <= margins * 3) {
+                    return;
+                }
+                var moveLen = _touch.pageY - currPageY;
+                box.find(answerBox).height(boxH - moveLen);
+                box.find(questBox).height(wrapperH - boxH + moveLen);
+            }
+            e.preventDefault();
+        });
+        $('.toggleBox .btn').on('touchend', sw1.unlockSwipes);
+    }
+
+    callback({
+        "title": "八年级上学期Unit 1同步测试（深圳专版）",
+        "ref_score": 85.0,
+        "curriculum_id": -1,
+        "parts": [
+            {
+                "sid": 0,
+                "module_type_name": "词语释义。 从下面每小题的A B C D四个选项中选出可以替换划线部分的最佳选项。（共5小题，每小题1分）（5分）",
+                "module_type_url": "",
+                "children": [
+                    {
+                        "sid": 0,
+                        "stem": "There are <u>more than</u> 60 lifts in Kingkey 100.  ",
+                        "qtype": 1,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "950460955556352919"
+                            ],
+                            "solving_idea": "我是解题思路,我是解题思路哦",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352917",
+                                "stem": "a lot of",
+                                "attachments": [{
+                                    "file_type": 2,
+                                    "position": 2,
+                                    "file_url": "images/music.mp3"
+                                }]
+                            },
+                            {
+                                "id": "950460955556352918",
+                                "stem": "a few",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352919",
+                                "stem": "over",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352920",
+                                "stem": "under",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [{
+                            "file_type": 3,
+                            "position": 2,
+                            "file_url": "letv://a3df"
+                        }],
+                        "children": [],
+                        "id": "855789107374322738",
+                        "version_id": "950460940484674737"
+                    },
+                    {
+                        "sid": 1,
+                        "stem": "<u>Perhaps</u> I should do more practice.   ",
+                        "qtype": 2,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "950460955556352924"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352921",
+                                "stem": "Certainly",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352922",
+                                "stem": "Yet",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352923",
+                                "stem": "Because",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352924",
+                                "stem": "Maybe",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107374322739",
+                        "version_id": "950460940484674738"
+                    },
+                    {
+                        "sid": 2,
+                        "stem": "Thomas <u>has the ability</u> to sing like a girl.  ",
+                        "qtype": 8,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "950460955556352925"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352925",
+                                "stem": "can",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352926",
+                                "stem": "likes",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352927",
+                                "stem": "must",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352928",
+                                "stem": "will",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107374322740",
+                        "version_id": "950460940484674739"
+                    },
+                    {
+                        "sid": 3,
+                        "stem": "形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，完毕Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
+                        "qtype": 3,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "空1",
+                                "空2"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352929",
+                                "stem": "in a village",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352930",
+                                "stem": "from the city",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352931",
+                                "stem": "by car",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352932",
+                                "stem": "in Australia",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107374322741",
+                        "version_id": "950460940484674740"
+                    },
+                    {
+                        "sid": 4,
+                        "stem": "Dinosaurs <u>died out</u> for some unknown reasons.  ",
+                        "qtype": 6,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "我是简答题参考答案"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352933",
+                                "stem": "went away",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352934",
+                                "stem": "were killed",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352935",
+                                "stem": "no longer live on earth",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352936",
+                                "stem": "were not at home",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107374322742",
+                        "version_id": "950460940484674741"
+                    },
+                    {
+                        "sid": 0,
+                        "stem": "50、完形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，解题思路（图片、文字）{#blank#}3{#/blank#}&nbsp;<br />\n&nbsp;Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
+                        "curriculum_id": 0,
+                        "qtype": 4,
+                        "is_objective": 1,
+                        "parent_version": "0",
+                        "question_ref_sorce": 30,
+                        "ref_info": {
+                            "answers": [
+                                "950460955556352935"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [],
+                        "attachments": [
+                            {
+                                "file_type": 1,
+                                "position": 2,
+                                "file_url": "images/music.png"
+                            }
+                        ],
+                        "children": [
+                            {
+                                "sid": 0,
+                                "stem": "",
+                                "curriculum_id": 0,
+                                "qtype": 1,
+                                "is_objective": 1,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 10,
+                                "ref_info": {
+                                    "answers": [
+                                        "950460955558783942"
+                                    ],
+                                    "solving_idea": "解题思路（图片、文字1）",
+                                    "attachments": [
+                                        {
+                                            "file_type": 1,
+                                            "position": 2,
+                                            "file_url": "images/music.png"
+                                        }
+                                    ],
+                                    "points": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955558783942",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "images/music.png"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "950460955558783943",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "images/music.png"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "950460955558783944",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "images/music.png"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107375196017",
+                                "version_id": "950460940485547540"
+                            },
+                            {
+                                "sid": 1,
+                                "stem": "",
+                                "curriculum_id": 0,
+                                "qtype": 1,
+                                "is_objective": 1,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 10,
+                                "ref_info": {
+                                    "answers": [
+                                        "950460955558783945"
+                                    ],
+                                    "solving_idea": "解题思路（图片、文字2<br />\n&nbsp;",
+                                    "attachments": [
+                                        {
+                                            "file_type": 1,
+                                            "position": 2,
+                                            "file_url": "packages/catalogue_4776_1044757/media/c99431c24a3e8e8b7f6d9e117d3d0823.png"
+                                        }
+                                    ],
+                                    "points": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955558783945",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "packages/catalogue_4776_1044757/media/941b9ae193379d83b5f26cac80748168.png"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "950460955558783946",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "packages/catalogue_4776_1044757/media/6f10b327f75e4ce31f3c631ae56cc9df.png"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "950460955558783947",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "packages/catalogue_4776_1044757/media/f6f68f67bda56f820b86501fdac71e27.png"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "950460955558783948",
+                                        "stem": "",
+                                        "attachments": [
+                                            {
+                                                "file_type": 1,
+                                                "position": 2,
+                                                "file_url": "packages/catalogue_4776_1044757/media/15626d2f7c18b3537e05232dde5a3e26.png"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107375196018",
+                                "version_id": "950460940485547541"
+                            }
+                        ],
+                        "id": "855789107375196016",
+                        "version_id": "950460940485547539"
+                    },
+                    {
+                        "sid": 0,
+                        "stem": "50、完形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，解题思路（图片、文字）{#blank#}3{#/blank#}&nbsp;<br />\n&nbsp;Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
+                        "curriculum_id": 0,
+                        "qtype": 5,
+                        "is_objective": 1,
+                        "parent_version": "0",
+                        "question_ref_sorce": 30,
+                        "ref_info": {
+                            "answers": [
+                                "950460955556352935"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [],
+                        "attachments": [
+                            {
+                                "file_type": 1,
+                                "position": 2,
+                                "file_url": "packages/catalogue_4776_1044757/media/d89c4441464a339ac658bb2be76a31bb.png"
+                            }
+                        ],
+                        "children": [
+                            {
+                                "sid": 0,
+                                "stem": "There are <u>more than</u> 60 lifts in Kingkey 100.  ",
+                                "qtype": 1,
+                                "is_objective": true,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 1,
+                                "ref_info": {
+                                    "answers": [
+                                        "950460955556352919"
+                                    ],
+                                    "solving_idea": "",
+                                    "attachments": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955556352917",
+                                        "stem": "a lot of",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352918",
+                                        "stem": "a few",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352919",
+                                        "stem": "over",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352920",
+                                        "stem": "under",
+                                        "attachments": []
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107374322738",
+                                "version_id": "950460940484674737"
+                            },
+                            {
+                                "sid": 1,
+                                "stem": "<u>Perhaps</u> I should do more practice.   ",
+                                "qtype": 2,
+                                "is_objective": true,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 1,
+                                "ref_info": {
+                                    "answers": [
+                                        "950460955556352924"
+                                    ],
+                                    "solving_idea": "",
+                                    "attachments": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955556352921",
+                                        "stem": "Certainly",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352922",
+                                        "stem": "Yet",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352923",
+                                        "stem": "Because",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352924",
+                                        "stem": "Maybe",
+                                        "attachments": []
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107374322739",
+                                "version_id": "950460940484674738"
+                            },
+                            {
+                                "sid": 2,
+                                "stem": "Thomas <u>has the ability</u> to sing like a girl.  ",
+                                "qtype": 8,
+                                "is_objective": true,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 1,
+                                "ref_info": {
+                                    "answers": [
+                                        "950460955556352925"
+                                    ],
+                                    "solving_idea": "",
+                                    "attachments": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955556352925",
+                                        "stem": "can",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352926",
+                                        "stem": "likes",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352927",
+                                        "stem": "must",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352928",
+                                        "stem": "will",
+                                        "attachments": []
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107374322740",
+                                "version_id": "950460940484674739"
+                            },
+                            {
+                                "sid": 3,
+                                "stem": "回答下面简答题",
+                                "qtype": 6,
+                                "is_objective": true,
+                                "parent_version": "950460940485547539",
+                                "question_ref_sorce": 1,
+                                "ref_info": {
+                                    "answers": [
+                                        "空1"
+                                    ],
+                                    "solving_idea": "",
+                                    "attachments": []
+                                },
+                                "options": [
+                                    {
+                                        "id": "950460955556352929",
+                                        "stem": "in a village",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352930",
+                                        "stem": "from the city",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352931",
+                                        "stem": "by car",
+                                        "attachments": []
+                                    },
+                                    {
+                                        "id": "950460955556352932",
+                                        "stem": "in Australia",
+                                        "attachments": []
+                                    }
+                                ],
+                                "attachments": [],
+                                "children": [],
+                                "id": "855789107374322741",
+                                "version_id": "95046940484674740"
+                            },
+                        ],
+                        "id": "855789107375196016",
+                        "version_id": "950460940485547539"
+                    },
+                    {
+                        "sid": 3,
+                        "stem": "形填空题---题干（图片）{#blank#}1{#/blank#}&nbsp;，选项（图片）{#blank#}2{#/blank#}&nbsp;，完毕Jack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if heJack always tells lies to others, so I double if he",
+                        "qtype": 3,
+                        "is_objective": true,
+                        "parent_version": "0",
+                        "question_ref_sorce": 1.0,
+                        "ref_info": {
+                            "answers": [
+                                "空1",
+                                "空2"
+                            ],
+                            "solving_idea": "",
+                            "attachments": []
+                        },
+                        "options": [
+                            {
+                                "id": "950460955556352929",
+                                "stem": "in a village",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352930",
+                                "stem": "from the city",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352931",
+                                "stem": "by car",
+                                "attachments": []
+                            },
+                            {
+                                "id": "950460955556352932",
+                                "stem": "in Australia",
+                                "attachments": []
+                            }
+                        ],
+                        "attachments": [],
+                        "children": [],
+                        "id": "855789107374322741",
+                        "version_id": "95060940484674740"
+                    }
+                ]
+            }
+        ]
+    }, [
+        {
+            "answers": [
+                {
+                    "answerType": 0,
+                    "assess": 0,
+                    "content": "950460955556352917",
+                    "score": 0
+                }
+            ],
+            "assess": 1,
+            "score": 10,
+            "versionId": "950460940484674737"
+        }, {
+            "answers": [
+                {
+                    "sid": 0,
+                    "answerType": 0,
+                    "assess": 0,
+                    "content": "950460955556352921",
+                    "score": 0
+                }
+            ],
+            "assess": 2,
+            "score": 0,
+            "versionId": "950460940484674738"
+        }, {
+            "answers": [
+                {
+                    "sid": 0,
+                    "answerType": 0,
+                    "assess": 1,
+                    "content": "kong-1",
+                    "score": 1
+                },
+                {
+                    "sid": 1,
+                    "answerType": 0,
+                    "assess": 2,
+                    "content": "kong-2",
+                    "score": 0
+                }
+            ],
+            "assess": 1,
+            "score": 0,
+            "versionId": "95060940484674740"
+        }, {
+            "answers": [
+                {
+                    "sid": 0,
+                    "answerType": 0,
+                    "assess": 1,
+                    "content": "随着里约奥运会的闭幕，巴西官方正要松一口气，花最少的钱办最大的事，为世界呈现了一个精彩的奥运盛宴，得到了国际奥委会主席巴赫的称赞。“如果还有下次，国际奥委会依然会选择在里约举办奥运会”，这句话是对里约最大的肯定。然而，在奥运圣火熄灭，各国运动员载誉归国以后，巴西迅速迎来了“后奥运时代”。曾经风光无限的里约热内卢，巨额债务问题接踵而至，而巨资修建的奥运场馆如今也人去楼空，把巴西拉回了现实，不再沉溺于过往的美丽梦境。如何走出经济困境，才是当前第一要务。虽然巴西官方已经能省就省，但公共交通、基础设施、奥运场馆等经费开销依然超过了120亿美元，对于目前经济低迷的巴西而言，无疑是雪上加霜。里约奥组委曾经强调说，很多支出都是向民间资本借贷，但现在看来，里约州政府的很多账单都难以找到企业买单，他们不得不拖欠公务员和事业单位工作人员的部分薪资",
+                    "score": 1
+                }
+            ],
+            "assess": 1,
+            "score": 0,
+            "versionId": "950460940484674741"
+        }
+    ])
+</script>
+</body>
+</html>
